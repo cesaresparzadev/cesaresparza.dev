@@ -14,13 +14,12 @@ const Styles = {
   nav: {
     backgroundColor: '#3D3D4B',
     display: 'flex',
-    justifyContent: 'flex-end',
-    padding: '45px 0',
-    paddingRight: '50px'
+    justifyContent: 'center',
+    padding: '20px 0 20px 0'
   },
   navlinks: {
     color: '#C2C2C2',
     fontSize: '20px',
-    marginLeft: '30px',
+    margin: '0 30px',
   },
 }

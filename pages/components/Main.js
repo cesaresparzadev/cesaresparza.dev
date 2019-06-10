@@ -1,6 +1,6 @@
 const Main = (props) => (
   <div style={Styles.main}>
-    <h1>{props.title}</h1>
+    <h3 style={Styles.h}>{props.title}</h3>
     <p>{props.content}</p>
   </div>
 )
@@ -16,4 +16,7 @@ const Styles = {
     justifyContent: 'center',
     paddingTop: '50px'
   },
+  h: {
+    textTransform: 'uppercase'
+  }
 }
