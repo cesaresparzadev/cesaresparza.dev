@@ -1,3 +1,12 @@
+// module.exports = {
+//   target: 'serverless'
+// }
+
+// export HTML
 module.exports = {
-  target: 'serverless'
-}
+  exportPathMap: function() {
+    return {
+      '/': { page: '/' }
+    };
+  }
+};

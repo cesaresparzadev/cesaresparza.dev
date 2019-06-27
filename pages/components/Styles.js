@@ -1,4 +1,8 @@
 const Styles = {
+  main: {
+    background: 'rgb(2,0,36)',
+    background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(61,113,124,1) 0%, rgba(61,61,75,1) 64%)',
+  },
   header: {
     display: 'flex',
     backgroundColor: '#3D3D4B',
@@ -12,7 +16,7 @@ const Styles = {
       display: 'flex',
       justifyContent: 'flex-end'
     }
-  }
+  },
 }
 
 export default Styles;

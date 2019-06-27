@@ -1,11 +1,12 @@
 import Layout from './components/Layout';
 import Main from './components/Main';
-import Link from 'next/link';
+import FetchBlog from './components/FetchBlog';
 
 const Blog = () => (
   <div>
     <Layout />
     <Main title="Blog" content="Blog Content" />
+    <FetchBlog />
   </div>
 )
 

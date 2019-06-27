@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 const Nav = () => (
   <div style={Styles.nav}>
-    <Link href="/"><a style={Styles.navlinks}>Home</a></Link>
+    {/* <Link href="/"><a style={Styles.navlinks}>Home</a></Link>
     <Link href="/blog"><a style={Styles.navlinks}>Blog</a></Link>
-    <Link href="/contact"><a style={Styles.navlinks}>Contact</a></Link>
+    <Link href="/contact"><a style={Styles.navlinks}>Contact</a></Link> */}
   </div>
 )
 
