@@ -12,16 +12,19 @@ const Index = props => (
 )
 
 Index.getInitialProps = async function() {
-  const res = await fetch('https://api.github.com/users/cesaresparzadev/repos');
-  const data = await res.json();
+  var res = await fetch('https://api.github.com/users/cesaresparzadev/repos');
+  var data = await res.json();
   console.log(`Data fetched. Count: ${data.length}`);
   if(data.length){
+    console.log('Github repos fetched');
     return {
       collection: data
     }
   } else {
+    data = require('./components/repos.json');
+    console.log('Local JSON file loaded');
     return {
-      collection: null
+      collection: data
     }
   }
 }

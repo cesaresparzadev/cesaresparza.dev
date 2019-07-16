@@ -9,7 +9,7 @@ const Repos = props => {
             <img src={`${item.html_url}/blob/master/screenshot.png?raw=true`} style={Styles.cardImg} />
             <Link href={item.html_url}>
               <a target='_blank' style={Styles.link}><h4 style={Styles.h1}>{item.name}</h4></a>
-            </Link>          
+            </Link>
             <p>{item.description}</p>
           </div>
         )) }
@@ -37,7 +37,7 @@ const Styles = {
   },
   repoCard: {
     borderRadius: '25px',
-    color: 'rgb(243, 243, 243)',
+    // color: 'rgb(243, 243, 243)',
     display: 'flex',
     flexDirection: 'column',
     margin: '25px',
@@ -63,7 +63,7 @@ const Styles = {
     zIndex: '-1'
   },
   link: {
-    color: 'rgb(243, 243, 243)',
+    // color: 'rgb(243, 243, 243)',
     textTransform: 'uppercase',
     textAlign: 'center'
   }
