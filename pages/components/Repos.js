@@ -22,7 +22,7 @@ const Styles = {
   div: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
     padding: '0 100px'
   },
   repoCard: {
@@ -35,7 +35,7 @@ const Styles = {
     minWidth: '300px',
     maxHeight: '300px',
     maxWidth: '300px',
-    textAlign: 'center',
+    textAlign: '',
     position: 'relative',
   },
   h1: {
