@@ -1,30 +1,20 @@
 import Link from 'next/link';
 
-const Repos = props => {
-  if(props.collection){
-    return (
+const Repos = props => (
       <div style={Styles.div}>
         { props.collection.map(item => (
           <div key={item.id} style={Styles.repoCard}>
-            <img src={`${item.html_url}/blob/master/screenshot.png?raw=true`} style={Styles.cardImg} />
             <Link href={item.html_url}>
-              <a target='_blank' style={Styles.link}><h4 style={Styles.h1}>{item.name}</h4></a>
+              <a target='_blank' style={Styles.link} className="cardLink">
+                <h4 style={Styles.h1}>{item.name}</h4>
+                <img src={`${item.html_url}/blob/master/screenshot.png?raw=true`} style={Styles.cardImg} className="cardImg"/>
+              </a>
             </Link>
             <p>{item.description}</p>
           </div>
         )) }
       </div>
     )
-  } else {
-    return (
-      <div style={Styles.div}>
-          <div key={item.id} style={Styles.repoCard}>
-            <h4 style={Styles.link}>No Repos</h4>
-          </div>
-      </div>
-    )
-  }
-}
 
 export default Repos;
 
@@ -37,7 +27,6 @@ const Styles = {
   },
   repoCard: {
     borderRadius: '25px',
-    // color: 'rgb(243, 243, 243)',
     display: 'flex',
     flexDirection: 'column',
     margin: '25px',
@@ -55,15 +44,13 @@ const Styles = {
   cardImg: {
     borderRadius: '25px',
     position: 'absolute',
-    opacity: '.25',
     top: '0',
     left: '0',
     width: '100%',
-    height: 'auto',
-    zIndex: '-1'
+    height: 'auto'
   },
   link: {
-    color: '#6C6C6C',
+    color: 'rgb(76, 75, 75)',
     textTransform: 'uppercase',
     textAlign: 'center'
   }
