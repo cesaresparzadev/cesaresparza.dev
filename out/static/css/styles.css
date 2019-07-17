@@ -1,8 +1,0 @@
-.cardImg {
-  opacity: .1;
-}
-
-.cardImg:hover, 
-.cardImg:active {
-  opacity: 1.0;
-}
