@@ -63,7 +63,7 @@ const Styles = {
     zIndex: '-1'
   },
   link: {
-    // color: 'rgb(243, 243, 243)',
+    color: '#6C6C6C',
     textTransform: 'uppercase',
     textAlign: 'center'
   }

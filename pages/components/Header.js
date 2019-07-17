@@ -30,9 +30,10 @@ const Styles = {
       fontFamily: 'sans-serif'
     },
     bioImage: {
+      borderRadius: '25px',
       height: '150px',
+      marginBottom: '20px',
       width: '150px',
-      marginBottom: '20px'
     },
     bio: {
       display: 'flex',
