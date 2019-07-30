@@ -1,7 +1,6 @@
 import Layout from './components/Layout';
 import Footer from './components/Footer';
 import fetch from 'isomorphic-unfetch';
-import Link from 'next/link';
 
 const blogUrl = 'http://50.116.12.123:5000/';
 
@@ -15,7 +14,7 @@ const Blog = (blog) => (
   <div>
     <Layout />
     <div>
-      <div>
+      <div style={Styles.blog} >
         {Object.keys(blog).map((key) => {
           if(key === 'blog'){
             var obj = blog[key];
@@ -23,10 +22,10 @@ const Blog = (blog) => (
               var pubDate = obj[key].published;
               var formattedDate = parsedDate(pubDate);
               return (
-                <div style={Styles.blogPost} key={obj[key].id}>
-                  <Link href={`/post?id=${obj[key].id}`}>
-                    <a><h3 key={obj[key].id}>{obj[key].title}</h3></a>
-                  </Link>
+                <div key={obj[key].id} style={Styles.post}>
+                  {/* <Link href={`/post?id=${obj[key].id}`} as={`/${obj[key].title}`}> */}
+                  <h3 key={obj[key].id}>{obj[key].title}</h3>
+                  {/* </Link> */}
                   <span>Published: {formattedDate}</span>
                   <p>{obj[key].content}</p>
                 </div>
@@ -55,13 +54,14 @@ const Styles = {
   list: {
     listStyleType: 'none'
   },
-  blogPost: {
-    borderRadius: '25px',
+  blog: {
     display: 'flex',
-    flexDirection: 'column',
+    flexWrap: 'wrap',
+    justifyContent: 'space-evenly',
     margin: '25px',
     padding: '25px',
-    minHeight: '300px',
-    minWidth: '300px',
   },
+  post: {
+    width: '650px'
+  }
 };
