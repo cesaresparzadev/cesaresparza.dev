@@ -1,13 +1,13 @@
 import Layout from './components/Layout';
-import Main from './components/Main';
+import Footer from './components/Footer';
 import Repos from './components/Repos';
 import fetch from 'isomorphic-unfetch';
 
 const Index = props => (
   <div>
     <Layout />
-    <Main title="My GitHub Repos" />
     <Repos collection={ props.collection } />
+    <Footer />
   </div>
 )
 

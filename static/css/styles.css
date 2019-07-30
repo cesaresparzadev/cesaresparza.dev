@@ -1,8 +1,14 @@
 .cardImg {
   opacity: .1;
+  transition: opacity .25s ease-in-out;
 }
 
 .cardImg:hover, 
 .cardImg:active {
   opacity: 1.0;
+  transition: opacity .25s ease-in-out;
+}
+
+a:hover {
+  text-decoration: none;
 }

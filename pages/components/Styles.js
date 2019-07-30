@@ -17,6 +17,9 @@ const Styles = {
       justifyContent: 'flex-end'
     }
   },
+  list: {
+    listStyleType: 'none'
+  }
 }
 
 export default Styles;
