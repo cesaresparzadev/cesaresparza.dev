@@ -12,3 +12,8 @@
 a:hover {
   text-decoration: none;
 }
+
+body {
+  width: 100%;
+  min-width: fit-content;
+}

@@ -31,7 +31,7 @@ export default Repos;
 
 const Styles = {
   main: {
-    color: '#8C8686',
+    color: '#777373',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

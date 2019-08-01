@@ -1,8 +1,9 @@
 import Layout from './components/Layout';
 import Footer from './components/Footer';
 import fetch from 'isomorphic-unfetch';
+import parse from 'html-react-parser';
 
-const blogUrl = 'http://50.116.12.123:5000/';
+const blogUrl = 'https://cesparza.dev/wp-json/wp/v2/posts/';
 
 const parsedDate = (published) => {
   var pubDate = new Date(published);
@@ -10,24 +11,25 @@ const parsedDate = (published) => {
   return formatted;
 }
 
+const stripHtml = (html) => {
+  return parse(html);
+}
+
 const Blog = (blog) => (
   <div>
     <Layout />
-    <div>
       <div style={Styles.blog} >
         {Object.keys(blog).map((key) => {
           if(key === 'blog'){
             var obj = blog[key];
             var posts = Object.keys(obj).map(key => {
-              var pubDate = obj[key].published;
+              var pubDate = obj[key].date;
               var formattedDate = parsedDate(pubDate);
               return (
                 <div key={obj[key].id} style={Styles.post}>
-                  {/* <Link href={`/post?id=${obj[key].id}`} as={`/${obj[key].title}`}> */}
-                  <h3 key={obj[key].id}>{obj[key].title}</h3>
-                  {/* </Link> */}
-                  <span>Published: {formattedDate}</span>
-                  <p>{obj[key].content}</p>
+                  <h3 key={obj[key].id} style={Styles.postTitle}>{stripHtml(obj[key].title.rendered)}</h3>
+                  <p>{stripHtml(obj[key].content.rendered)}</p>
+                  <span style={Styles.pubDate}>Published: {formattedDate}</span>
                 </div>
               )
             })
@@ -35,7 +37,6 @@ const Blog = (blog) => (
           }
         })}
       </div>
-    </div>
     <Footer />
   </div>
 )
@@ -62,6 +63,16 @@ const Styles = {
     padding: '25px',
   },
   post: {
-    width: '650px'
+    width: '90%',
+    maxWidth: '650px',
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  postTitle: {
+    color: '#777373'
+  },
+  pubDate: {
+    textAlign: 'right',
+    margin: '0 20px 0 0'
   }
 };

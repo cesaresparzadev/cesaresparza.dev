@@ -12,8 +12,7 @@ const Header = () => (
         <h4>Hi, I'm Cesar Esparza</h4>
         <p style={Styles.header.para}>I’m a Web Developer with 3+ years of professional experience 
           working on both the front and back-end of web applications. 
-          I've created apps using JavaScript (React, jQuery, Vanilla), VBScript, and SQL (T-SQL, MySQL). 
-          My area of expertise lies more within how it works than how it looks.</p>
+          I've created apps using JavaScript (React, jQuery, Vanilla), VBScript, and SQL (T-SQL, MySQL).</p>
         <div style={Styles.header.social}>
           <Link href={linkedInLink}>
             <a target='_blank'><img src="/static/img/linkedin.png" alt="LinkedIn" style={Styles.header.socialImg} /></a>
