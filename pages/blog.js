@@ -28,7 +28,7 @@ const Blog = (blog) => (
               return (
                 <div key={obj[key].id} style={Styles.post}>
                   <h3 key={obj[key].id} style={Styles.postTitle}>{stripHtml(obj[key].title.rendered)}</h3>
-                  <p>{stripHtml(obj[key].content.rendered)}</p>
+                  <div>{stripHtml(obj[key].content.rendered)}</div>
                   <span style={Styles.pubDate}>Published: {formattedDate}</span>
                 </div>
               )
@@ -66,12 +66,14 @@ const Styles = {
     width: '90%',
     maxWidth: '650px',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    marginBottom: '50px'
   },
   postTitle: {
-    color: '#777373'
+    color: 'rgb(61, 109, 121)'
   },
   pubDate: {
+    color: '#6c757d',
     textAlign: 'right',
     margin: '0 20px 0 0'
   }

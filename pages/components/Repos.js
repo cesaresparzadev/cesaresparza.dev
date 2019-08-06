@@ -9,7 +9,7 @@ const isLanguage = (language) => {
 
 const Repos = props => (
   <div style={Styles.main}>
-    <h3>SOME OF MY PREVIOUS WORK</h3>
+    <h3>MY REPOS</h3>
     <div style={Styles.div}>
       { props.collection.map(item => (
         <div key={item.id} style={Styles.repoCard}>
@@ -42,7 +42,6 @@ const Styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    padding: '0 100px'
   },
   repoCard: {
     borderRadius: '25px',

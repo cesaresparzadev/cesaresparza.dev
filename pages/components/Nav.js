@@ -1,11 +1,16 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-const Nav = () => (
+const Nav = () => {
+  const router = useRouter();
+
+  return (
   <div style={Styles.nav}>
-    <Link href="/"><a style={Styles.navlinks}>Home</a></Link>
-    <Link href="/blog"><a style={Styles.navlinks}>Blog</a></Link>
+    <Link href="/"><a style={Styles.navlinks} className={(router.query.page === 'blog' ? '' : 'active')}>Home</a></Link>
+    <Link href="/blog?page=blog" as="/blog"><a style={Styles.navlinks} className={(router.query.page === 'blog' ? 'active' : '')}>Blog</a></Link>
   </div>
-)
+  )
+}
 
 export default Nav;
 

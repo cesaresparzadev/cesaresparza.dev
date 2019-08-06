@@ -10,9 +10,9 @@ const Header = () => (
       </Link>
       <div style={Styles.header.bioText}>
         <h4>Hi, I'm Cesar Esparza</h4>
-        <p style={Styles.header.para}>I’m a Web Developer with 3+ years of professional experience 
+        <p style={Styles.header.para}>I’m a Web Developer with over 3 years of professional experience 
           working on both the front and back-end of web applications. 
-          I've created apps using JavaScript (React, jQuery, Vanilla), VBScript, and SQL (T-SQL, MySQL).</p>
+          I've built apps using JavaScript (React, jQuery, Vanilla), VBScript, and SQL (T-SQL, MySQL).</p>
         <div style={Styles.header.social}>
           <Link href={linkedInLink}>
             <a target='_blank'><img src="/static/img/linkedin.png" alt="LinkedIn" style={Styles.header.socialImg} /></a>
@@ -23,11 +23,6 @@ const Header = () => (
         </div>
       </div>
     </div>
-    <style jsx>
-      {`
-
-      `}
-    </style>
   </div>
   )
 
@@ -41,7 +36,7 @@ const Styles = {
     background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(61,113,124,1) 0%, rgba(61,61,75,1) 64%)',
     color: '#C2C2C2',
     justifyContent: 'flex-start',
-    padding: '50px',
+    paddingBottom: '50px',
     h1: {
       fontFamily: 'sans-serif'
     },
@@ -60,10 +55,10 @@ const Styles = {
       flexWrap: 'wrap',
       marginLeft: '35px',
       justifyContent: 'center',
-      width: '375px'
+      width: '375px',
     },
     para: {
-      marginRight: '65px'
+      maxWidth: '90%'
     },
     social: {
       display: 'flex'

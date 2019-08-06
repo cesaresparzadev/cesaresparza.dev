@@ -17,3 +17,8 @@ body {
   width: 100%;
   min-width: fit-content;
 }
+
+.active {
+  border-bottom: 2px solid gray;
+  padding-bottom: 5px;
+}
