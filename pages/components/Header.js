@@ -31,6 +31,7 @@ export default Header;
 const Styles = {
   header: {
     display: 'flex',
+    flexWrap: 'wrap',
     flexDirection: 'row',
     background: 'rgb(2,0,36)',
     background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(61,113,124,1) 0%, rgba(61,61,75,1) 64%)',

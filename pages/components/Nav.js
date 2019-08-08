@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 
 const Nav = () => {
   const router = useRouter();
-
+  const page = router.query.page;
   return (
   <div style={Styles.nav}>
-    <Link href="/"><a style={Styles.navlinks} className={(router.query.page === 'blog' ? '' : 'active')}>Home</a></Link>
-    <Link href="/blog?page=blog" as="/blog"><a style={Styles.navlinks} className={(router.query.page === 'blog' ? 'active' : '')}>Blog</a></Link>
+    <Link href="/"><a style={Styles.navlinks} className={( !page ? 'active' : 'navLink')}>Home</a></Link>
+    <Link href="/projects?page=projects" as="/projects"><a style={Styles.navlinks} className={( page === 'projects' ? 'active' : 'navLink')}>Projects</a></Link>
   </div>
   )
 }

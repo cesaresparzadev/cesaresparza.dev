@@ -1,3 +1,6 @@
+import Layout from './components/Layout';
+import Repos from './components/Repos';
+import Footer from './components/Footer';
 import Link from 'next/link';
 
 const isLanguage = (language) => {
@@ -7,47 +10,46 @@ const isLanguage = (language) => {
   }
 }
 
-const Repos = props => (
+const Projects = props => (
   <div>
-    <h3 style={Styles.reposTitle}>MY REPOS</h3>
-    <hr/>
-    <div style={Styles.main}>
-    <div style={Styles.div}>
-      { props.collection.map(item => (
-        <div key={item.id} style={Styles.repoCard}>
-          <Link href={item.html_url}>
-            <a target='_blank' style={Styles.link} className="cardLink">
-              <h4 style={Styles.h}>{item.name}</h4>
-              <img src={`${item.html_url}/blob/master/screenshot.png?raw=true`} style={Styles.cardImg} className="cardImg"/>
-            </a>
-          </Link>
-          <p>{item.description}</p>
-          <p style={Styles.lang}>{isLanguage(item.language)}</p>
-        </div>
-        )) }
-      </div>
-    </div>  
+    <Layout />
+    <Repos collection={ props.collection }/>
+    <Footer />
   </div>
   )
 
-export default Repos;
+export default Projects;
+
+Projects.getInitialProps = async function() {
+  var res = await fetch('https://api.github.com/users/cesaresparzadev/repos');
+  var data = await res.json();
+  if(data.length){
+    console.log('Github repos fetched');
+    return {
+      collection: data
+    }
+  } else {
+    data = require('./components/repos.json');
+    console.log('Local JSON file loaded');
+    return {
+      collection: data
+    }
+  }
+}
 
 const Styles = {
   main: {
     color: '#777373',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingTop: '50px'
   },
   div: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
-  },
-  reposTitle: {
-    color: 'rgb(61, 109, 121)',
-    margin: '25px 50px',
   },
   repoCard: {
     borderRadius: '25px',
@@ -81,5 +83,6 @@ const Styles = {
   link: {
     color: 'rgb(76, 75, 75)',
     textTransform: 'uppercase',
+    textAlign: ''
   }
 }
