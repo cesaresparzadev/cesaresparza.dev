@@ -76,6 +76,7 @@ const Styles = {
   },
   blog: {
     display: 'flex',
+    flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
     margin: '25px',
@@ -88,7 +89,7 @@ const Styles = {
     margin: '25px 50px',
   },
   post: {
-    width: '90%',
+    width: '70%',
     maxWidth: '900px',
     display: 'flex',
     flexDirection: 'column',
@@ -101,11 +102,11 @@ const Styles = {
   },
   pubDate: {
     color: '#6c757d',
-    textAlign: 'right',
+    marginLeft: '45px'
   },
   postFooter: {
     display: 'flex',
-    justifyContent: 'space-between',
+    flexDirection: 'row',
     margin: '20px 0'
   }
 };
