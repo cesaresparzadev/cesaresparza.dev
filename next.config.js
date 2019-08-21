@@ -14,6 +14,7 @@ module.exports = {
       '/': { page: '/' },
       '/blog': { page: '/post' },
       '/post': { page: '/post' },
+      '/projects': { page: '/projects' },
     }
 
     data.forEach(post => {

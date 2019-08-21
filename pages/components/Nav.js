@@ -6,7 +6,7 @@ const Nav = () => {
   const page = router.query.page;
   return (
   <div style={Styles.nav}>
-    <Link href="/"><a style={Styles.navlinks} className={( !page ? 'active' : 'navLink')}>Home</a></Link>
+    <Link href="/"><a style={Styles.navlinks} className={( !page ? 'active' : 'navLink')}>Blog</a></Link>
     <Link href="/projects?page=projects" as="/projects"><a style={Styles.navlinks} className={( page === 'projects' ? 'active' : 'navLink')}>Projects</a></Link>
   </div>
   )

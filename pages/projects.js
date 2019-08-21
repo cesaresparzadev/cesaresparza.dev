@@ -1,6 +1,7 @@
 import Layout from './components/Layout';
 import Repos from './components/Repos';
 import Footer from './components/Footer';
+import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 
 const isLanguage = (language) => {
