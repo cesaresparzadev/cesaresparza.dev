@@ -3,7 +3,7 @@ import Footer from './components/Footer';
 import Blog from './components/Blog';
 import fetch from 'isomorphic-unfetch';
 
-const blogUrl = 'https://cesparza.dev/wp-json/wp/v2/posts/';
+const blogUrl = 'https://cesparza.dev/wp-json/wp/v2/posts?categories=5';
 
 const Index = (blog) => (
   <div>
