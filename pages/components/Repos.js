@@ -10,7 +10,6 @@ const isLanguage = (language) => {
 const Repos = props => (
   <div>
     <h3 style={Styles.reposTitle}>PROJECTS</h3>
-    <span style={Styles.titleSpan}>My <Link href='https://github.com/cesaresparzadev/'><a target='_blank'>GitHub</a></Link> public repos</span>
     <hr/>
     <div style={Styles.main}>
     <div style={Styles.div}>
@@ -39,7 +38,6 @@ const Styles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
-    paddingTop: '50px'
   },
   div: {
     display: 'flex',
@@ -49,9 +47,7 @@ const Styles = {
   reposTitle: {
     color: 'rgb(61, 109, 121)',
     margin: '25px 0 5px 50px',
-  },
-  titleSpan: {
-    margin: '0 50px',
+    textAlign: 'center'
   },
   repoCard: {
     borderRadius: '25px',

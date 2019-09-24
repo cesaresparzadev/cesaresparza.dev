@@ -34,7 +34,7 @@ const Blog = (props) => {
     var href= `/post?id=${key.id}`;
     var hrefAs = `/blog/${parseUrl(key.title.rendered)}`;
     return (
-      <div key={key.id} className="blog">
+      <div key={key.id}>
         <div style={Styles.post}>
           <Link href={href} as={hrefAs}>
             <a><h3 key={key.id} style={Styles.postTitle}>{stripHtml(key.title.rendered)}</h3></a>
@@ -72,29 +72,21 @@ const Styles = {
   },
   blogPage: {
     display: 'flex',
-    flexWrap: 'wrap'
-
-  },
-  blog: {
-    display: 'flex',
     flexWrap: 'wrap',
-    margin: '0 25px',
-    padding: '25px',
-    maxWidth: '90%',
-    overflow: 'hidden'
+    justifyContent: 'center',
+    margin: '0 20px'
   },
   headerTitle: {
     color: 'rgb(61, 109, 121)',
     margin: '25px 50px',
+    textAlign: 'center'
   },
   post: {
-    width: '70%',
-    maxWidth: '900px',
     display: 'flex',
     flexDirection: 'column',
     maxHeight: '280px',
-    overflow: 'hidden',
-    alignContent: 'flex-start'
+    maxWidth: '900px',
+    overflow: 'hidden'
   },
   postTitle: {
     color: 'rgb(61, 109, 121)'
